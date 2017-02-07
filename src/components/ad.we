@@ -13,27 +13,27 @@
 <style>
     .slider {
         flex-direction: row;
-        height: 280;
+        height: 280px;
         background-color: white;
         border-width: 1px;
         border-color: #dadada;
     }
     .slider-pages {
         flex-direction: row;
-        height: 280;
+        height: 280px;
     }
     .indicator {
         width: 748px;
-        height:280;
+        height:280px;
         position:absolute;
-        top:120;
+        top:120px;
         item-color: gray;
         item-selectedColor: black;
-        item-size: 10;
+        item-size: 10px;
     }
     .icon {
-        width: 748;
-        height: 280;
+        width: 748px;
+        height: 280px;
     }
 </style>
 

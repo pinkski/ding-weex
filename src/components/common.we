@@ -32,34 +32,34 @@
     border-radius: 5px;
     border-width: 1px;
     border-color: #dadada;
-    margin-top: 20;
-    height: 400;
+    margin-top: 20px;
+    height: 400px;
   }
   .title {
     font-size: 30px;
-    left: 30;
-    top: 30;
+    left: 30px;
+    top: 30px;
   }
   .tools {
     flex-direction: row;
     flex-wrap: wrap;
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 40;
+    margin-top: 40px;
   }
   .tool {
     justify-content: center;
-    width: 135;
-    height: 120;
-    margin: 20;
+    width: 135px;
+    height: 120px;
+    margin: 20px;
   }
   .icon {
-    left: 32.5;
-    width: 70;
-    height: 70;
+    left: 32.5px;
+    width: 70px;
+    height: 70px;
   }
   .subtitle {
-    left: 32.5;
+    left: 32.5px;
     width: 70px;
     height: 25px;
     text-align: center;
