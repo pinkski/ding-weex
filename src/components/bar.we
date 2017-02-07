@@ -1,8 +1,8 @@
 <template>
     <div class="bg">
         <text class="title">晚上好，管理员</text>
-        <a href=""><text class="setting" onclick="setting">添加</text></a>
-        <a href=""><text class="setting" onclick="manage">管理</text></a>
+        <a href=""><text class="add" onclick="add">添加</text></a>
+        <a href=""><text class="add" onclick="manage">管理</text></a>
     </div>
 
 </template>
@@ -20,7 +20,7 @@
         font-size: 28px;
         color: gray;
     }
-    .setting {
+    .add {
         left: 250px;
         margin: 25px;
         font-size: 28px;
@@ -37,9 +37,9 @@
     module.exports = {
         data: {},
         methods: {
-            setting: function (event) {
+            add: function (event) {
                 modal.toast({
-                    message: 'setting',
+                    message: 'add',
                     duration: 0.1
                 })
             },
