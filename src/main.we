@@ -1,0 +1,23 @@
+<template>
+  <div class="bg">
+    <scroller>
+      <ad></ad>
+      <bar></bar>
+      <menu></menu>
+      <common></common>
+    </scroller>
+  </div>
+</template>
+
+<style>
+  .bg {
+    background-color: #F2F2F2;
+  }
+</style>
+
+<script>
+  require('./components/ad.we')
+  require('./components/bar.we')
+  require('./components/menu.we')
+  require('./components/common.we')
+</script>

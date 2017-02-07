@@ -1,0 +1,55 @@
+<template>
+    <div class="bg">
+        <text class="title">晚上好，管理员</text>
+        <a href=""><text class="setting" onclick="setting">添加</text></a>
+        <a href=""><text class="setting" onclick="manage">管理</text></a>
+    </div>
+
+</template>
+
+<style>
+    .bg {
+        flex-direction: row;
+        height: 80px;
+        background-color: white;
+        border-width: 1px;
+        border-color: #dadada;
+    }
+    .title {
+        margin: 25px;
+        font-size: 28px;
+        color: gray;
+    }
+    .setting {
+        left: 250px;
+        margin: 25px;
+        font-size: 28px;
+        color: deepskyblue;
+    }
+</style>
+
+<script>
+    var modal
+    __weex_define__('@weex-temp/x', function (__weex_require__) {
+        modal = __weex_require__('@weex-module/modal')
+    })
+
+    module.exports = {
+        data: {},
+        methods: {
+            setting: function (event) {
+                modal.toast({
+                    message: 'setting',
+                    duration: 0.1
+                })
+            },
+            manage: function (event) {
+                modal.toast({
+                    message: 'manage',
+                    duration: 0.1
+                })
+            }
+        }
+    }
+</script>
+

@@ -1,0 +1,90 @@
+<template>
+  <div>
+    <slider class="slider">
+      <div class="slider-pages" repeat="{{itemList}}">
+
+        <div repeat="menu in menus" class="tool" onclick="onclick">
+                  <image class="icon" src="{{menu}}"></image>
+                  <text class="subtitle">{{'签到' + $index}}</text>
+        </div>
+
+      </div>
+
+      <indicator class="indicator"></indicator>
+    </slider>
+  </div>
+</template>
+
+<style>
+  .slider {
+    flex-direction: row;
+    height: 200;
+    background-color: white;
+    border-width: 1px;
+    border-color: #dadada;
+    margin-top: 20;
+  }
+  .slider-pages {
+    flex-direction: row;
+    height: 200;
+  }
+  .indicator {
+    width: 748px;
+    height:200;
+    position:absolute;
+    top:80;
+    item-color: gray;
+    item-selectedColor: black;
+    item-size: 10;
+  }
+  .tool {
+      justify-content: center;
+      width: 135;
+      height: 120;
+      margin: 20;
+      padding: 20;
+    }
+  .icon {
+      left: 32.5;
+      width: 70;
+      height: 70;
+    }
+    .subtitle {
+      left: 32.5;
+      width: 70px;
+      height: 25px;
+      text-align: center;
+      font-size: 22px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+</style>
+
+<script>
+  var modal
+  __weex_define__('@weex-temp/x', function (__weex_require__) {
+    modal = __weex_require__('@weex-module/modal')
+  })
+
+  module.exports = {
+    data: {
+      itemList: [
+        {itemId: '520421163634', title: 'item1', pictureUrl: ''},
+        {itemId: '522076777462', title: 'item2', pictureUrl: ''}
+      ],
+      menus: ['http://i1.piimg.com/567571/5d496f6f4fd73b36.png',
+              'http://p1.bpimg.com/567571/4eefb574e9eade06.png',
+              'http://p1.bpimg.com/567571/ae05b503214f77fe.png',
+              'http://i1.piimg.com/567571/ce48c49378fa6aaa.png'
+      ]
+    },
+    methods: {
+      onclick: function(event) {
+        modal.toast({
+          message: '菜单',
+          duration: 0.1
+        })
+      }
+    }
+  }
+</script>

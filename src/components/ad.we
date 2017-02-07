@@ -1,0 +1,49 @@
+<template>
+    <div>
+        <slider class="slider" auto-play="true">
+            <div class="slider-pages" repeat="{{itemList}}">
+                <image class="icon" src="{{pictureUrl}}"></image>
+            </div>
+
+            <indicator class="indicator"></indicator>
+        </slider>
+    </div>
+</template>
+
+<style>
+    .slider {
+        flex-direction: row;
+        height: 280;
+        background-color: white;
+        border-width: 1px;
+        border-color: #dadada;
+    }
+    .slider-pages {
+        flex-direction: row;
+        height: 280;
+    }
+    .indicator {
+        width: 748px;
+        height:280;
+        position:absolute;
+        top:120;
+        item-color: gray;
+        item-selectedColor: black;
+        item-size: 10;
+    }
+    .icon {
+        width: 748;
+        height: 280;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            itemList: [
+                {itemId: '520421163634', title: 'item1', pictureUrl: 'http://p1.bpimg.com/567571/77acbbe62bae41ea.png'},
+                {itemId: '522076777462', title: 'item2', pictureUrl: 'http://p1.bpimg.com/567571/77acbbe62bae41ea.png'}
+            ]
+        }
+    }
+</script>

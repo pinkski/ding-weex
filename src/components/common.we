@@ -1,0 +1,106 @@
+<template>
+  <div class="bg">
+  
+  <div class="bg-m">
+    <text class="title">常用应用</text>
+    <div class="tools">
+      <div repeat="tool in tools" class="tool" onclick="onclick">
+          <image class="icon" src="{{tool}}"></image>
+          <text class="subtitle">{{'签到' + $index}}</text>
+      </div>
+    </div>
+  </div>
+
+   <div class="bg-m">
+    <text class="title">其它应用</text>
+        <div class="tools">
+          <div repeat="tool in others" class="tool" onclick="onclick">
+              <image class="icon" src="{{tool}}"></image>
+              <text class="subtitle">{{'会议' + $index}}</text>
+          </div>
+        </div>
+  </div>
+  </div>
+</template>
+
+<style>
+  .bg {
+    background-color: #F7F7F7;
+  }
+  .bg-m {
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #dadada;
+    margin-top: 20;
+    height: 400;
+  }
+  .title {
+    font-size: 30px;
+    left: 30;
+    top: 30;
+  }
+  .tools {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 40;
+  }
+  .tool {
+    justify-content: center;
+    width: 135;
+    height: 120;
+    margin: 20;
+  }
+  .icon {
+    left: 32.5;
+    width: 70;
+    height: 70;
+  }
+  .subtitle {
+    left: 32.5;
+    width: 70px;
+    height: 25px;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+</style>
+
+<script>
+    var modal
+    __weex_define__('@weex-temp/x', function (__weex_require__) {
+        modal = __weex_require__('@weex-module/modal')
+    })
+
+  module.exports = {
+    data: {
+      tools: ['http://i1.piimg.com/567571/fda656b24fc57b7b.png',
+              'http://p1.bpimg.com/567571/9a8b2e8525c06ce8.png',
+              'http://i1.piimg.com/567571/1d6798ab07160bd0.png',
+              'http://i1.piimg.com/567571/22118b057bb82a57.png',
+              'http://i1.piimg.com/567571/35285d2a91576cd7.png',
+              'http://i1.piimg.com/567571/0fdaa1cde2c7a8e7.png',
+              'http://i1.piimg.com/567571/12043afbbd8e6036.png',
+              'http://i1.piimg.com/567571/941360bd928c57c7.png'],
+
+      others: ['http://i1.piimg.com/567571/fda656b24fc57b7b.png',
+                'http://p1.bpimg.com/567571/9a8b2e8525c06ce8.png',
+                'http://i1.piimg.com/567571/1d6798ab07160bd0.png',
+                'http://i1.piimg.com/567571/22118b057bb82a57.png',
+                'http://i1.piimg.com/567571/35285d2a91576cd7.png'],
+
+      img: 'http://i1.piimg.com/567571/35285d2a91576cd7.png'
+    },
+    methods: {
+        onclick: function(event) {
+          modal.toast({
+              message: '应用',
+              duration: 0.1
+          })
+        }
+    }
+  }
+</script>
