@@ -1,6 +1,7 @@
 # ding-weex
 
 ding-weex is project about use weex to implements ding
+持续更新中...
 
 ## How to start
 
@@ -8,6 +9,12 @@ ding-weex is project about use weex to implements ding
 
 ```bash
 npm install
+```
+
+### Show
+
+```bash
+weex main.we [--qr]
 ```
 
 ### Development
