@@ -1,6 +1,6 @@
 <template>
     <list class="list" loadmore="fetch" loadmoreoffset="10">
-        <cell class="row" repeat="num in lists">
+        <cell class="row" repeat="num in lists" onclick="openCell()">
             <image class="icon" src="http://i1.piimg.com/567571/35285d2a91576cd7.png"></image>
             <text class="text">{{num}}</text>
         </cell>
@@ -25,7 +25,10 @@
                     for (let i = length; i < length + LOADMORE_COUNT; ++i) {
                     this.lists.push(i + 1)
                     }
-            }, 800)}
+            }, 800)},
+            openCell: function (event) {
+                modal.toast({message: 'open cell', duration: 0.1})
+            }
         }
     }
 </script>
