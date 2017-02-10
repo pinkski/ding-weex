@@ -1,6 +1,6 @@
 <template>
     <div style="flex-direction: column;">
-        <wxc-tabbar tab-items={{tabItems}}  selected-color="#38ADFF"></wxc-tabbar>
+        <wxc-tabbar tab-items={{tabItems}}  selected-color="#38ADFF" selected-index="2"></wxc-tabbar>
     </div>
 </template>
 
@@ -18,7 +18,7 @@
                     icon: '',
                     image: 'http://p1.bpimg.com/567571/7c3be157d21f0b69.png',
                     selectedImage: 'http://p1.bqimg.com/567571/d530c6a2d864d83b.png',
-                    src: 'components/tabbar-item.js?itemId=tab1',
+                    src: 'components/message.js',
                     visibility: 'visible',
                 },
                 {
@@ -48,7 +48,7 @@
                     icon: '',
                     image: 'http://p1.bqimg.com/567571/cedeeeee5449cb64.png',
                     selectedImage: 'http://p1.bpimg.com/567571/472ba2e99819e274.png',
-                    src: 'components/tabbar-item.js?itemId=tab3',
+                    src: 'components/contact.js',
                     visibility: 'hidden',
                 },
                 {
