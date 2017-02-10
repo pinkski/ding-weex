@@ -37,8 +37,8 @@
                 this.text = '消息面板...';
             }
             else if (bundleUrl.indexOf("tab2") > 0){
-                this.color = '#00ff00';
-                this.text = 'DING面板...';
+                this.color = '#38ADFF';
+                this.text = '您还没有收到DING...';
             }
             else if (bundleUrl.indexOf("tab3") > 0){
                 this.color = '#0000ff';

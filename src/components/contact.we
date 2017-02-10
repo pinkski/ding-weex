@@ -1,0 +1,57 @@
+<template>
+    <list class="list" loadmore="fetch" loadmoreoffset="10">
+        <cell class="row" repeat="num in lists" onclick="openCell()">
+            <image class="icon" src="http://i1.piimg.com/567571/35285d2a91576cd7.png"></image>
+            <text class="text">{{num}}</text>
+        </cell>
+    </list>
+</template>
+
+<script>
+    var modal
+    __weex_define__('@weex-temp/x', function (__weex_require__) {
+        modal = __weex_require__('@weex-module/modal')
+    })
+    const LOADMORE_COUNT = 4
+    export default {
+        data: {
+            lists: ['钉钉好友', '手机通讯录', '我的群组', '服务窗']
+        },
+        methods: {
+            fetch: function (event) {
+                modal.toast({message: 'loadmore', duration: 1})
+                setTimeout(() => {
+                    const length = this.lists.length
+                    for (let i = length; i < length + LOADMORE_COUNT; ++i) {
+                        this.lists.push(i + 1)
+                    }
+                }, 800)},
+            openCell: function (event) {
+                modal.toast({message: 'open cell', duration: 0.1})
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    .text {
+        font-size: 30px;
+        left:100px;
+        margin-top: 25px;
+    }
+
+    .row {
+        padding: 20;
+        border-bottom-color: #eeeeee;
+        border-bottom-width: 1;
+        border-bottom-style: solid;
+        height: 120px;
+    }
+
+    .icon {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+    }
+
+</style>
