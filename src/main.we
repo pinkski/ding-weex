@@ -1,23 +1,84 @@
 <template>
-  <div class="bg">
-    <scroller>
-      <ad></ad>
-      <bar></bar>
-      <menu></menu>
-      <common></common>
-    </scroller>
-  </div>
+    <div style="flex-direction: column;">
+        <wxc-tabbar tab-items={{tabItems}}  selected-color="#38ADFF"></wxc-tabbar>
+    </div>
 </template>
 
-<style>
-  .bg {
-    background-color: #F2F2F2;
-  }
-</style>
-
 <script>
-  require('./components/ad.we')
-  require('./components/bar.we')
-  require('./components/menu.we')
-  require('./components/common.we')
+    require('weex-components');
+    var apis = require('./common/api');
+
+    module.exports = {
+        data: {
+            tabItems: [
+                {
+                    index: 0,
+                    title: '消息',
+                    titleColor: '#38ADFF',
+                    icon: '',
+                    image: 'http://p1.bpimg.com/567571/7c3be157d21f0b69.png',
+                    selectedImage: 'http://p1.bqimg.com/567571/d530c6a2d864d83b.png',
+                    src: 'components/tabbar-item.js?itemId=tab1',
+                    visibility: 'visible',
+                },
+                {
+                    index: 1,
+                    title: 'DING',
+                    titleColor: '#38ADFF',
+                    icon: '',
+                    image: 'http://p1.bqimg.com/567571/f5e666d7097289c8.png',
+                    selectedImage: 'http://p1.bpimg.com/567571/36347ecb6895dd3e.png',
+                    src: 'components/tabbar-item.js?itemId=tab2',
+                    visibility: 'hidden',
+                },
+                {
+                    index: 2,
+                    title: '工作',
+                    titleColor: '#38ADFF',
+                    icon: '',
+                    image: 'http://p1.bpimg.com/567571/4c97a4c8b96e57f8.png',
+                    selectedImage: 'http://p1.bpimg.com/567571/efc785ac4968bb5f.png',
+                    src: 'components/work.js',
+                    visibility: 'hidden',
+                },
+                {
+                    index: 3,
+                    title: '联系人',
+                    titleColor: '#38ADFF',
+                    icon: '',
+                    image: 'http://p1.bqimg.com/567571/cedeeeee5449cb64.png',
+                    selectedImage: 'http://p1.bpimg.com/567571/472ba2e99819e274.png',
+                    src: 'components/tabbar-item.js?itemId=tab3',
+                    visibility: 'hidden',
+                },
+                {
+                    index: 4,
+                    title: '我的',
+                    titleColor: '#38ADFF',
+                    icon: '',
+                    image: 'http://p1.bpimg.com/567571/fb386a645e99486e.png',
+                    selectedImage: 'http://p1.bpimg.com/567571/d60887d2dc3fa6a0.png',
+                    src: 'components/mine.js',
+                    visibility: 'hidden',
+                }
+            ],
+        },
+        created: function () {
+            var bundleUrl = this.$getConfig().bundleUrl;
+            var base = apis.getBaseUrl(bundleUrl);
+            for (var i = 0; i < this.tabItems.length; i++) {
+                var tabItem = this.tabItems[i];
+                tabItem.src = base + tabItem.src;
+            }
+        },
+        methods: {
+            ready: function (e) {
+                var vm = this;
+                vm.$on('tabBar.onClick',function(e){
+                    var detail= e.detail;
+                    nativeLog('tabBar.onClick ' + detail.index);
+                });
+            },
+        }
+    }
 </script>
